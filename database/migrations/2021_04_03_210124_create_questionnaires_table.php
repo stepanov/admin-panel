@@ -19,7 +19,7 @@ class CreateQuestionnairesTable extends Migration
             $table->date('date_of_birth');
             $table->string('email')->unique();
             $table->string('phone')->unique();
-            $table->enum('status', ['new', 'accepted', 'rejected', 'deleted']);
+            $table->enum('status', ['new', 'accepted', 'rejected', 'deleted'])->default('new');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateUploadsTable extends Migration
         Schema::create('uploads', function (Blueprint $table) {
             $table->uuid('id');
             $table->enum('type', ['avatar']);
-            $table->string('questionnairy_id');
+            $table->string('questionnaire_id');
             $table->string('filename');
             $table->string('mime');
             $table->string('original_filename');
