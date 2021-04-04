@@ -27,6 +27,7 @@ class QuestionnaireFactory extends Factory
             'email' => $this->faker->email,
             'phone' => '+7812' . rand(1111111, 9999999),
             'date_of_birth' => $this->faker->date,
+            'avatar' => $this->faker->image('public/storage/images', 300, 300, null, false),
         ];
     }
 }
