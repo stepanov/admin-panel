@@ -40,4 +40,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get questionnaire associated with the user
+     *
+     */
+    public function questionnaire()
+    {
+        return $this->hasOne(Questionnaire::class);
+    }
+
+    /**
+     * Get logs associated with this user
+     */
+    public function logs()
+    {
+        return $this->hasMany(Logs::class);
+    }
 }

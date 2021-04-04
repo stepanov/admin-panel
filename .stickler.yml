@@ -1,0 +1,8 @@
+linters:
+  phpcs:
+      standard: 'PSR2'
+      exclude: 'Generic.Files.LineLength,PSR2.Files.EndFileNewline'
+      ignore: 'tests/fixtures/generated/*'
+      extensions: 'php'
+      tab_width: 4
+      fixer: true
