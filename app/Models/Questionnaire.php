@@ -10,6 +10,21 @@ class Questionnaire extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'id',
+        'name',
+        'email',
+        'phone',
+        'date_of_birth',
+        'status',
+        'avatar',
+    ];
+
+    /**
      * Get user that owns the questionnaire
      */
     public function user()

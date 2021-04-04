@@ -2,8 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Questionnaire;
+use Database\Factories\QuestionnaireFactory;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 
 class QuestionnaireGenerate extends Command
 {
@@ -38,7 +39,11 @@ class QuestionnaireGenerate extends Command
      */
     public function handle()
     {
-        Log::info('Questionnaire is generating ...');
-        $this->info('Questionnaire is generating ...');
+        $factory = new QuestionnaireFactory();
+        $data = $factory->definition();
+
+        $questionnaire = Questionnaire::create($data);
+
+        $this->info('Questionnaire is generating ... ' . print_r($data, true) . " - new=" . print_r($questionnaire, true));
     }
 }
