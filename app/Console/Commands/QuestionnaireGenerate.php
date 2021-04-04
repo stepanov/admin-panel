@@ -44,6 +44,6 @@ class QuestionnaireGenerate extends Command
 
         $questionnaire = Questionnaire::create($data);
 
-        $this->info('Questionnaire is generating ... ' . print_r($data, true) . " - new=" . print_r($questionnaire, true));
+        $this->info('Questionnaire is generating ... ');
     }
 }
