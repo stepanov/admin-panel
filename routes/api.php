@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function () {
-    Route::post('/users', 'UserController@authentificate');
-    Route::put('/users', 'UserController@initializeGA');
-    Route::get('/questionnaires', 'QuestionnaireController@index');
-    Router::put('/questionnaires', 'QuestionnaireController@process');
-    Route::delete('/questionnaires', 'QuestionnaireController@delete');
-    Route::get('/logs', 'LogConteller@index');
+    Route::post('/users', 'App\Http\Controllers\Api\UserController@authentificate');
+    Route::put('/users', 'App\Http\Controllers\Api\UserController@initializeGA');
+    Route::get('/questionnaires', 'App\Http\Controllers\Api\QuestionnaireController@index');
+    Route::put('/questionnaires', 'App\Http\Controllers\Api\QuestionnaireController@process');
+    Route::delete('/questionnaires', 'App\Http\Controllers\Api\QuestionnaireController@delete');
+    Route::get('/logs', 'App\Http\Controllers\Api\LogController@index');
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
