@@ -21,6 +21,7 @@ class CreateQuestionnairesTable extends Migration
             $table->string('phone')->unique();
             $table->enum('status', ['new', 'accepted', 'rejected', 'deleted'])->default('new');
             $table->string('avatar')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
     }

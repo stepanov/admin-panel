@@ -14,7 +14,10 @@ class CreateLogsTable extends Migration
     public function up()
     {
         Schema::create('logs', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id');
+            $table->foreignId('user_id');
+            $table->enum('action', ['accept', 'reject', 'delete']);
+            $table->jsonb('raw_data');
             $table->timestamps();
         });
     }
