@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     Route::post('/users', 'App\Http\Controllers\Api\UserController@authentificate');
-    Route::put('/users', 'App\Http\Controllers\Api\UserController@initializeGA');
+    Route::put('/users', 'App\Http\Controllers\Api\UserController@initializeGa');
     Route::get('/questionnaires', 'App\Http\Controllers\Api\QuestionnaireController@index');
-    Route::put('/questionnaires', 'App\Http\Controllers\Api\QuestionnaireController@process');
-    Route::delete('/questionnaires', 'App\Http\Controllers\Api\QuestionnaireController@delete');
+    Route::get('/questionnaires/{id}', 'App\Http\Controllers\Api\QuestionnaireController@get');
+    Route::put('/questionnaires/{id}', 'App\Http\Controllers\Api\QuestionnaireController@process');
+    Route::delete('/questionnaires/{id}', 'App\Http\Controllers\Api\QuestionnaireController@delete');
     Route::get('/logs', 'App\Http\Controllers\Api\LogController@index');
 });
 
