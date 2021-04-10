@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLogsTable extends Migration
+class AddGoogleAuthFieldToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
-            $table->uuid('id');
-            $table->foreignId('user_id');
-            $table->enum('action', ['accept', 'reject', 'delete']);
-            $table->jsonb('raw_data');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->text('google2fa_secret');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logs');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('google2fa_secret');
+        });
     }
 }

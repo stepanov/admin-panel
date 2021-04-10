@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Log extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'raw_data' => 'array',
+        'id' => 'string',
+    ];
+
+    protected $perPage = 50;
 }
