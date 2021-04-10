@@ -13,4 +13,6 @@ class Log extends Model
         'raw_data' => 'array',
         'id' => 'string',
     ];
+
+    protected $perPage = 50;
 }

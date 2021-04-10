@@ -28,6 +28,8 @@ class Questionnaire extends Model
         'id' => 'string',
     ];
 
+    protected $perPage = 20;
+
     /**
      * Get user that owns the questionnaire
      */
