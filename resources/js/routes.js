@@ -1,6 +1,7 @@
 import Home from './components/Home.vue';
 import DisplayQuestionnare from './components/DisplayQuestionnare.vue';
 import DisplayLogs from './components/DisplayLogs.vue';
+import DisplayUser from './components/DisplayUser.vue';
 
 export const routes = [
     {
@@ -9,7 +10,7 @@ export const routes = [
         component: Home
     },
     {
-        name: 'uesrs',
+        name: 'users',
         path: '/users',
         component: DisplayQuestionnare
     },
@@ -17,5 +18,10 @@ export const routes = [
         name: 'logs',
         path: '/logs',
         component: DisplayLogs
+    },
+    {
+        name: 'userView',
+        path: '/users/view/:id',
+        component: DisplayUser
     }
 ];

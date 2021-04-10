@@ -24,7 +24,7 @@ class QuestionnaireController extends Controller
     public function index()
     {
         $list = Questionnaire::where('status', 'new')
-            ->paginate();
+            ->get();
 
         Log::debug('Get questionnare: ' . print_r($list, true));
 
