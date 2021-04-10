@@ -59,5 +59,4 @@ class Handler extends ExceptionHandler
             ]
         ], $rendered->getStatusCode());
     }
-
 }
