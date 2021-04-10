@@ -24,6 +24,10 @@ class Questionnaire extends Model
         'avatar',
     ];
 
+    protected $casts = [
+        'id' => 'string',
+    ];
+
     /**
      * Get user that owns the questionnaire
      */

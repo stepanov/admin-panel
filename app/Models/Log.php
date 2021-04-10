@@ -11,5 +11,6 @@ class Log extends Model
 
     protected $casts = [
         'raw_data' => 'array',
+        'id' => 'string',
     ];
 }
