@@ -18,6 +18,7 @@ class CreateLogsTable extends Migration
             $table->foreignId('user_id');
             $table->enum('action', ['accept', 'reject', 'delete']);
             $table->jsonb('raw_data');
+            $table->foreignId('questionnaire_id')->nullable();
             $table->timestamps();
         });
     }
