@@ -22,7 +22,7 @@ class LogController extends Controller
      */
     public function index()
     {
-        $list = Log::all()->paginate();
+        $list = Log::all();
 
         return response()->json([
             'status' => 'ok',
