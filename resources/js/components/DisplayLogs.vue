@@ -2,13 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Logs Component</div>
 
-                    <div class="card-body">
-                        I'm a Log component.
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -16,8 +10,18 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        data() {
+            return {
+                logs: []
+            }
+        },
+        created() {
+            this.axios
+                .get(`${process.env.MIX_API_URL}/${process.env.MIX_API_LOGS_URI}`)
+                .then(response => {
+                    this.logs = response.data
+                    console.log('logs: ', this.logs.data)
+                })
         }
     }
 </script>

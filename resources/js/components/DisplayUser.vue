@@ -1,14 +1,11 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
+            <div class="col-md-4">
+                <img class="rounded" :src="'/storage/images/{{ avatar }}'" />
+            </div>
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">User Component</div>
-
-                    <div class="card-body">
-                        I'm an User component.
-                    </div>
-                </div>
+                <h2>{{ name }}</h2>
             </div>
         </div>
     </div>
@@ -16,8 +13,10 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        props: {
+            avatar: String,
+            name: String,
+            id: String,
         }
     }
 </script>
