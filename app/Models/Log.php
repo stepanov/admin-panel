@@ -15,4 +15,12 @@ class Log extends Model
     ];
 
     protected $perPage = 50;
+
+    /**
+     * Get questionnaire associated with this log record
+     */
+    public function questionnaire()
+    {
+        return $this->belongsTo(Questionnaire::class);
+    }
 }

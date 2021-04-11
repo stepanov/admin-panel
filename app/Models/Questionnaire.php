@@ -46,4 +46,12 @@ class Questionnaire extends Model
     {
         return $this->hasMany(Upload::class);
     }
+
+    /**
+     * Get log record associated with this questionnaire
+     */
+    public function log()
+    {
+        return $this->hasOne(Log::class);
+    }
 }
