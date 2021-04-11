@@ -2,7 +2,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <ul class = "list-unstyled">
+                    <li v-for="log in logs.data" :key="log.id">
+                        <div class="row pb-2">
+                            <div class="col-md-6">
 
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
