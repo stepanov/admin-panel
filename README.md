@@ -4,13 +4,23 @@
 
 * composer install
 
+* cp .env.example .env
+
+* mkdir storage/app/public/images
+
+* ./artisan storage:link
+
+* ./artisan key:generate
+
+* mysqladmin create -uroot admin_panel
+
 * ./artisan migrate
 
 * ./artisan db:seed
 
-* ./artisan serve
-
 * npm install
+.
+* ./artisan serve
 
 * npm run watch
 
